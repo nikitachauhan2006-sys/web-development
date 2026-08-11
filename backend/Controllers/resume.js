@@ -1,4 +1,4 @@
-const Resume = require("../Models/Resume");
+const Resume = require("../Models/resume");
 const pdfParse = require("pdf-parse");
 const cohere = require("cohere-ai");
 const fs = require("fs");
