@@ -1,0 +1,929 @@
+/**
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 30px; 
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px;
+  box-sizing: border-box;
+  background-color: #f4f7fe;
+}
+
+
+.DashboardLeft {
+  flex: 3; 
+  background: #ffffff;
+  padding: 36px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.DashboardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.DashboardHeaderTitle {
+  font-size: 14px;
+  color: #a3ed20;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.DashboardHeaderLargeTitle {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1b2559;
+}
+
+.codingTitle {
+  background-color: #e9f0ff;
+  color: #4318ff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+.alertInfo {
+  background-color: #fff8e6;
+  border-left: 4px solid #ffb800;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.alertTitle {
+  font-weight: 600;
+  color: #8c6b00;
+  margin-bottom: 8px;
+}
+
+.dashboardInstructions {
+  font-size: 14px;
+  color: #555555;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+
+.DashboardUploadResume {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px dashed #d0d7de;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fafbfc;
+}
+
+.DashboardUploadResumeBlock {
+  font-size: 15px;
+  color: #333333;
+  font-weight: 500;
+}
+
+.DashboardInputField input[type="file"] {
+  display: none;
+}
+
+.analyzeAIBtn {
+  background-color: #4318ff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.analyzeAIBtn:hover {
+  background-color: #3311cc;
+}
+
+.jobDesc {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.textArea {
+  width: 100%;
+  min-height: 220px;
+  padding: 16px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #d0d7de;
+  box-sizing: border-box;
+  outline: none;
+  resize: vertical;
+}
+
+.textArea:focus {
+  border-color: #4318ff;
+}
+
+.AnalyzeBtn {
+  align-self: flex-end;
+  background-color: #4318ff;
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.AnalyzeBtn:hover {
+  background-color: #3311cc;
+}
+
+.feedbackBox {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: #f7f9fc;
+  border: 1px solid #4318ff;
+  border-radius: 8px;
+}
+
+.feedbackHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4318ff;
+  margin-bottom: 10px;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid #e0e0e0;
+  border-top: 3px solid #4318ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.progressBarContainer {
+  width: 100%;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background-color: #4318ff;
+  transition: width 0.4s ease;
+}
+
+
+.resultBox {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.scoreCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.scoreLabel {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.scoreValue {
+  font-size: 26px;
+  font-weight: 800;
+  color: #4318ff;
+}
+
+.resultStatus {
+  font-size: 14px;
+  color: #4a5568;
+  margin-bottom: 16px;
+}
+
+.keywordSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tagContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.matchTag {
+  background-color: #e6fffa;
+  color: #047857;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.missingTag {
+  background-color: #fff5f5;
+  color: #c53030;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+.DashboardRight {
+  flex: 1; 
+  min-width: 280px;
+  background: #ffffff;
+  padding: 36px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.DashboardRightTopCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.profileImg {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #4318ff;
+}
+
+.profileName {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1b2559;
+}
+
+
+@media (max-width: 900px) {
+  .dashboardWrapper {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .DashboardLeft,
+  .DashboardRight {
+    width: 100%;
+  }
+}**/
+
+
+/* =========================
+   MAIN DASHBOARD
+========================= */
+
+.Dashboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 30px;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  background-color: #f4f7fe;
+}
+
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.DashboardLeft {
+  flex: 3;
+
+  background: #ffffff;
+
+  padding: 36px;
+
+  border-radius: 16px;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.DashboardHeader {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.DashboardHeaderTitle {
+  font-size: 14px;
+
+  color: #a3ed20;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+}
+
+.titleRow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 4px;
+}
+
+.DashboardHeaderLargeTitle {
+  font-size: 26px;
+
+  font-weight: 700;
+
+  color: #1b2559;
+}
+
+.codingTitle {
+  background-color: #e9f0ff;
+
+  color: #4318ff;
+
+  padding: 4px 10px;
+
+  border-radius: 6px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* =========================
+   INSTRUCTIONS
+========================= */
+
+.alertInfo {
+  background-color: #fff8e6;
+
+  border-left: 4px solid #ffb800;
+
+  padding: 16px;
+
+  border-radius: 8px;
+}
+
+.alertTitle {
+  font-weight: 600;
+
+  color: #8c6b00;
+
+  margin-bottom: 8px;
+}
+
+.dashboardInstructions {
+  font-size: 14px;
+
+  color: #555555;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+
+/* =========================
+   RESUME UPLOAD
+========================= */
+
+.DashboardUploadResume {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border: 2px dashed #d0d7de;
+
+  padding: 20px;
+
+  border-radius: 10px;
+
+  background-color: #fafbfc;
+
+  box-sizing: border-box;
+}
+
+.DashboardUploadResumeBlock {
+  font-size: 15px;
+
+  color: #333333;
+
+  font-weight: 500;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.DashboardInputField input[type="file"] {
+  display: none;
+}
+
+.analyzeAIBtn {
+  display: inline-block;
+
+  background-color: #4318ff;
+
+  color: #ffffff;
+
+  padding: 10px 20px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  transition: background-color 0.2s ease;
+}
+
+.analyzeAIBtn:hover {
+  background-color: #3311cc;
+}
+
+
+/* =========================
+   JOB DESCRIPTION
+========================= */
+
+.jobDesc {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+.textArea {
+  width: 100%;
+
+  min-height: 220px;
+
+  padding: 16px;
+
+  font-size: 15px;
+
+  border-radius: 10px;
+
+  border: 1px solid #d0d7de;
+
+  box-sizing: border-box;
+
+  outline: none;
+
+  resize: vertical;
+}
+
+.textArea:focus {
+  border-color: #4318ff;
+}
+
+.AnalyzeBtn {
+  align-self: flex-end;
+
+  background-color: #4318ff;
+
+  color: #ffffff;
+
+  border: none;
+
+  padding: 12px 28px;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+.AnalyzeBtn:hover {
+  background-color: #3311cc;
+}
+
+.AnalyzeBtn:disabled {
+  background-color: #aaa;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.DashboardRight {
+  flex: 1;
+
+  min-width: 280px;
+
+  background: #ffffff;
+
+  padding: 36px;
+
+  border-radius: 16px;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  position: sticky;
+
+  top: 30px;
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.DashboardRightTopCard {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 16px;
+
+  width: 100%;
+}
+
+.profileImg {
+  width: 120px;
+
+  height: 120px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 4px solid #4318ff;
+}
+
+.profileName {
+  font-size: 22px;
+
+  font-weight: 700;
+
+  color: #1b2559;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loadingBox {
+  width: 100%;
+
+  margin-top: 30px;
+
+  padding: 25px;
+
+  box-sizing: border-box;
+
+  background-color: #f7f9fc;
+
+  border: 1px solid #e0e0e0;
+
+  border-radius: 12px;
+
+  text-align: center;
+}
+
+.loadingBox h3 {
+  color: #1b2559;
+
+  margin: 15px 0 8px;
+}
+
+.loadingBox p {
+  font-size: 14px;
+
+  color: #666;
+
+  line-height: 1.5;
+}
+
+
+/* =========================
+   SPINNER
+========================= */
+
+.spinner {
+  width: 35px;
+
+  height: 35px;
+
+  margin: auto;
+
+  border: 4px solid #e0e0e0;
+
+  border-top: 4px solid #4318ff;
+
+  border-radius: 50%;
+
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================
+   RESULT BOX
+========================= */
+
+.resultBox {
+  width: 100%;
+
+  margin-top: 30px;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background-color: #ffffff;
+
+  border: 1px solid #e0e0e0;
+
+  border-radius: 12px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.resultBox h3 {
+  margin-top: 0;
+
+  margin-bottom: 15px;
+
+  color: #1b2559;
+
+  font-size: 18px;
+}
+
+
+/* =========================
+   ATS SCORE
+========================= */
+
+.scoreCard {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin: 15px 0;
+
+  padding: 15px;
+
+  background-color: #f7f9fc;
+
+  border-radius: 10px;
+}
+
+.scoreLabel {
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: #333;
+}
+
+.scoreValue {
+  font-size: 28px;
+
+  font-weight: 800;
+
+  color: #4318ff;
+}
+
+
+/* =========================
+   FEEDBACK
+========================= */
+
+.resultStatus {
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color: #4a5568;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================
+   KEYWORDS
+========================= */
+
+.keywordSection {
+  margin-top: 18px;
+}
+
+.keywordSection h4 {
+  margin-bottom: 8px;
+
+  font-size: 14px;
+
+  color: #1b2559;
+}
+
+.tagContainer {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.matchTag {
+  background-color: #e6fffa;
+
+  color: #047857;
+
+  padding: 5px 9px;
+
+  border-radius: 5px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.missingTag {
+  background-color: #fff5f5;
+
+  color: #c53030;
+
+  padding: 5px 9px;
+
+  border-radius: 5px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .Dashboard {
+    flex-direction: column;
+
+    padding: 16px;
+  }
+
+  .DashboardLeft,
+  .DashboardRight {
+    width: 100%;
+
+    flex: none;
+  }
+
+  .DashboardRight {
+    position: static;
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+  .Dashboard {
+    padding: 10px;
+  }
+
+  .DashboardLeft,
+  .DashboardRight {
+    padding: 20px;
+  }
+
+  .DashboardHeaderLargeTitle {
+    font-size: 21px;
+  }
+
+  .DashboardUploadResume {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .analyzeAIBtn {
+    text-align: center;
+  }
+
+  .profileImg {
+    width: 100px;
+
+    height: 100px;
+  }
+
+}
