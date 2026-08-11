@@ -1,15 +1,14 @@
 
 # Dependencies
-backend/node_modules/
-MERN_AI/node_modules/
+node_modules/
 
 # Uploaded files
 backend/uploads/
 
 # Environment variables
-backend/.env
-MERN_AI/.env
 .env
+.env.*
+!.env.example
 
 # Logs
 *.log
