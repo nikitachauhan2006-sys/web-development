@@ -1,0 +1,20 @@
+/**backend/node_modules/
+frontend/node_modules/
+backend/uploads/
+backend/.env
+frontend/.env
+.env**/
+
+# Dependencies
+backend/node_modules/
+frontend/node_modules/
+
+# Uploaded files
+backend/uploads/
+
+# Environment variables
+backend/.env
+frontend/.env
+
+# Logs
+*.log
